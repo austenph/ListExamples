@@ -22,11 +22,11 @@ namespace ListExamples
             {
                 Console.Write(number);//print out the elements in a list 
             }
-                myfirstlist.Clear();//method to clear elements in a list
+            myfirstlist.Clear();//method to clear elements in a list
 
-                int[] myArray = { 1, 2, 3, 6, 8, 9, 10 };
-                List<int> arrayList = new List<int>(myArray);
-                Console.WriteLine(arrayList.Count);
+            int[] myArray = { 1, 2, 3, 6, 8, 9, 10 };
+            List<int> arrayList = new List<int>(myArray);
+            Console.WriteLine(arrayList.Count);
             int[] array = new int[3];
             List<int> list = new List<int>(array);
             int[] convertList = list.ToArray();//create an array from list
@@ -49,7 +49,7 @@ namespace ListExamples
             birthdays.RemoveAt(0);//removed whatever was at index 0
             Console.WriteLine(birthdays[4]);//prints out what is at index 4 ("7) because we removed two data points
             Console.WriteLine(birthdays[birthdays.IndexOf(2)]);//prints the instance of the data "2", starts at beginning
-           randomArray = birthdays.ToArray();//converted the list back to the array called randomArray
+            randomArray = birthdays.ToArray();//converted the list back to the array called randomArray
 
             //Class example from slides: Create a list of strings containing your top 5 favorite animals. use a foreach loop to print out all elements
             List<string> favoriteAnimals = new List<string>();
@@ -58,15 +58,39 @@ namespace ListExamples
             favoriteAnimals.Add("dog");
             favoriteAnimals.Add("dragon");
             favoriteAnimals.Add("lizard");
-            foreach(string animal in favoriteAnimals)
+            foreach (string animal in favoriteAnimals)
             {
-                Console.Write(animal + " ");
+                Console.WriteLine(animal + " ");
             }
-
-
-
+            List<bool> BoolList = new List<bool>() { true, false, false, true, false };
+            for (int i = 0; i < BoolList.Count; i++)
+            {
+                if (BoolList[i] == true)
+                {
+                    Console.WriteLine("Better bring an umbrella.");
+                }
+                else
+                {
+                    Console.WriteLine("no rain today, enjoy the sun!");
+                }
             }
+            int[] array1 = new int[] { 5, 2, 3, 4, 1, 5, 6, 3 };
+            List<int> numbersList = new List<int>(array1);
+            numbersList.Sort();
+            array1 = numbersList.ToArray();
 
+            List<int> randomnumbers = new List<int>() { 1, 23, 9, 77, 922, 6, 32, 63, 14, 5 };
+            randomnumbers.Contains(23);
+            randomnumbers.Contains(77);
+            randomnumbers.Contains(15);
+            randomnumbers.Remove(27);
+            randomnumbers.Remove(77);
+            randomnumbers.Remove(32);
+            randomnumbers.Remove(6);
+            randomnumbers.Contains(23);
+            randomnumbers.Contains(77);
+            randomnumbers.Contains(15);
+        }
         }
     }
 
